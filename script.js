@@ -4,13 +4,10 @@ let previousSelectedElement = null;
 
 form.addEventListener("submit", function (event) {
     event.preventDefault();
-    // inputId, color
+   
 
-    let cellId = form.inputId.value; // "3"
-    let selectedColor = form.color.value; // "#fjf88"
-
-    // inputId = "3"
-    // selectedColor = "#e7e7e7" ;
+    let cellId = form.inputId.value; 
+    let selectedColor = form.color.value; 
     let cell = document.getElementById(cellId);
     cell.style.backgroundColor = selectedColor;
     if (previousSelectedElement) {
