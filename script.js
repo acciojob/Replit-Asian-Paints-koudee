@@ -1,7 +1,12 @@
 const gridContainer = document.querySelector(".grid");
 const form = document.querySelector("#form");
 let previousSelectedElement = null;
+function removePreviousColour(){
+    if (previousSelectedElement) {
+        previousSelectedElement.style.backgroundColor = "white";
+    }
 
+}
 form.addEventListener("submit", function (event) {
     event.preventDefault();
    
@@ -10,9 +15,7 @@ form.addEventListener("submit", function (event) {
     let selectedColor = form.color.value; 
     let cell = document.getElementById(cellId);
     cell.style.backgroundColor = selectedColor;
-    if (previousSelectedElement) {
-        previousSelectedElement.style.backgroundColor = "white";
-    }
+    removePreviousColour()
 
     previousSelectedElement = cell;
 });
